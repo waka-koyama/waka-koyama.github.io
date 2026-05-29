@@ -54,6 +54,7 @@ const i18n = {
     'skills.cat3':    '好き',
     'projects.title': 'ライブ記録',
     'projects.sub':   '参戦したライブの記録です。',
+    'projects.showMore': 'もっと見る',
     'filter.all':     'すべて',
     'filter.other':   'その他',
     'exp.title':              '経歴',
@@ -88,6 +89,7 @@ const i18n = {
     'skills.cat3':    'I love',
     'projects.title': 'Live Log',
     'projects.sub':   'A record of every live I have attended.',
+    'projects.showMore': 'Show more',
     'filter.all':     'All',
     'filter.other':   'Others',
     'exp.title':              'Experience',
@@ -138,8 +140,6 @@ document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
    4. Live filter
    ============================================================ */
 const filterBtns = document.querySelectorAll('.filter-btn');
-const liveCards  = document.querySelectorAll('.live-card');
-const yearLabels = document.querySelectorAll('.year-label');
 
 filterBtns.forEach(btn => {
   btn.addEventListener('click', () => {
@@ -147,22 +147,23 @@ filterBtns.forEach(btn => {
     btn.classList.add('active');
 
     const filter = btn.dataset.filter;
+    const cards = document.querySelectorAll('.live-card');
+    const labels = document.querySelectorAll('.year-label');
 
-    liveCards.forEach(card => {
+    cards.forEach(card => {
       const match = filter === 'all' || card.dataset.artist === filter;
       card.classList.toggle('hidden', !match);
     });
 
     // 年ラベルを非表示にする（その年のカードが全部 hidden なら）
-    yearLabels.forEach(label => {
-      // 次の兄弟要素のうち live-card を収集（次の year-label まで）
-      const cards = [];
+    labels.forEach(label => {
+      const siblings = [];
       let sib = label.nextElementSibling;
       while (sib && !sib.classList.contains('year-label')) {
-        if (sib.classList.contains('live-card')) cards.push(sib);
+        if (sib.classList.contains('live-card')) siblings.push(sib);
         sib = sib.nextElementSibling;
       }
-      const anyVisible = cards.some(c => !c.classList.contains('hidden'));
+      const anyVisible = siblings.some(c => !c.classList.contains('hidden'));
       label.style.display = anyVisible ? '' : 'none';
     });
   });
@@ -227,18 +228,64 @@ modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
 /* ============================================================
-   6. Japan map — visited prefectures
+   7. Live grid — sort newest first & show only recent 2 years
    ============================================================ */
-const visited = [
-  'hokkaido','chiba','tokyo','kanagawa','nagano','shizuoka',
-  'ishikawa','fukui','gifu','aichi',
-  'mie','shiga','kyoto','osaka','hyogo','nara','wakayama',
-  'tottori','okayama','hiroshima',
-  'tokushima','kagawa','ehime','kochi',
-  'fukuoka','okinawa'
-];
+(function () {
+  const grid = document.getElementById('live-grid');
+  const showMoreBtn = document.getElementById('show-more-lives');
+  if (!grid || !showMoreBtn) return;
 
-visited.forEach(pref => {
-  const el = document.querySelector(`[data-pref="${pref}"]`);
-  if (el) el.classList.add('visited');
-});
+  // Collect cards and sort by date descending
+  const cards = [...grid.querySelectorAll('.live-card')];
+  cards.sort((a, b) => {
+    const da = a.querySelector('time').getAttribute('datetime');
+    const db = b.querySelector('time').getAttribute('datetime');
+    return db.localeCompare(da);
+  });
+
+  // Group by year (descending)
+  const groups = new Map();
+  cards.forEach(card => {
+    const year = card.querySelector('time').getAttribute('datetime').slice(0, 4);
+    if (!groups.has(year)) groups.set(year, []);
+    groups.get(year).push(card);
+  });
+
+  // Rebuild grid
+  grid.innerHTML = '';
+  const cutoffYear = new Date().getFullYear() - 2;
+  let expanded = false;
+
+  groups.forEach((yearCards, year) => {
+    const label = document.createElement('div');
+    label.className = 'year-label';
+    label.textContent = year;
+    grid.appendChild(label);
+
+    const isOld = Number(year) < cutoffYear;
+    if (isOld) label.classList.add('live-old', 'hidden');
+
+    yearCards.forEach(card => {
+      grid.appendChild(card);
+      if (isOld) card.classList.add('live-old', 'hidden');
+    });
+  });
+
+  // Re-bind card click events after rebuild
+  grid.querySelectorAll('.live-card').forEach(card => {
+    card.setAttribute('role', 'button');
+    card.setAttribute('tabindex', '0');
+    card.addEventListener('click', () => openModal(card));
+    card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') openModal(card); });
+  });
+
+  // Hide button if no old cards
+  const oldItems = grid.querySelectorAll('.live-old');
+  if (oldItems.length === 0) showMoreBtn.style.display = 'none';
+
+  showMoreBtn.addEventListener('click', () => {
+    expanded = !expanded;
+    oldItems.forEach(el => el.classList.toggle('hidden', !expanded));
+    showMoreBtn.textContent = expanded ? '閉じる' : 'もっと見る';
+  });
+})();

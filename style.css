@@ -302,6 +302,13 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 
 /* hidden by filter */
 .live-card.hidden { display: none; }
+.year-label.hidden { display: none; }
+
+/* Show more button */
+.show-more-btn {
+  display: block;
+  margin: 2rem auto 0;
+}
 
 /* ---------- Experience ---------- */
 .timeline { display: flex; flex-direction: column; gap: 1.5rem; }
