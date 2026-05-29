@@ -45,7 +45,7 @@ const i18n = {
     'about.body2':    '',
     'about.body3':    '',
     'about.stat1':    'ライブ参戦',
-    'about.stat2':    '都道府県制覇が目標',
+    'about.stat2':    '都道府県制覇済み',
     'about.stat3':    'ライブ歴',
     'skills.title':   'Skills',
     'skills.note':    '※ プレースホルダーです。実際のスキルに書き換えてください。',
@@ -79,7 +79,7 @@ const i18n = {
     'about.body2':    '',
     'about.body3':    '',
     'about.stat1':    'Lives attended',
-    'about.stat2':    'Prefectures — my goal',
+    'about.stat2':    'Prefectures visited',
     'about.stat3':    'Live history since',
     'skills.title':   'Skills',
     'skills.note':    '※ Placeholder — replace with your actual skills.',
@@ -225,3 +225,20 @@ document.querySelectorAll('.live-card').forEach(card => {
 modalClose.addEventListener('click', closeModal);
 modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+/* ============================================================
+   6. Japan map — visited prefectures
+   ============================================================ */
+const visited = [
+  'hokkaido','chiba','tokyo','kanagawa','nagano','shizuoka',
+  'ishikawa','fukui','gifu','aichi',
+  'mie','shiga','kyoto','osaka','hyogo','nara','wakayama',
+  'tottori','okayama','hiroshima',
+  'tokushima','kagawa','ehime','kochi',
+  'fukuoka','okinawa'
+];
+
+visited.forEach(pref => {
+  const el = document.querySelector(`[data-pref="${pref}"]`);
+  if (el) el.classList.add('visited');
+});
