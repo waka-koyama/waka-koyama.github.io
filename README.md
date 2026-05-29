@@ -1,6 +1,7 @@
 # 小山 和香 — Portfolio
 
-個人ポートフォリオサイト。ビルドツール不要、3ファイル構成（`index.html` / `style.css` / `script.js`）で GitHub Pages にそのまま公開できます。
+音楽・ライブ・旅行が好きな大学生の個人サイトです。  
+ビルドツール不要、3ファイル構成（`index.html` / `style.css` / `script.js`）で GitHub Pages にそのまま公開できます。
 
 ## GitHub Pages へのデプロイ手順
 
@@ -40,20 +41,34 @@ git push -u origin main
 
 | 項目 | 場所 |
 |------|------|
-| プロフィール写真 | `index.html` の `<img src="...">` を実際のファイルパスに変更し、同じフォルダに画像を置く |
+| プロフィール写真 | `index.html` の `<img src="YOUR_PHOTO.jpg">` を実際のファイルパスに変更し、同じフォルダに画像を置く |
+| X (Twitter) URL | `index.html` の Contact セクションの X リンクの `href="#"` と `YOUR_X_HANDLE` を実際の値に変更 |
 | スキル追加 | `index.html` の `#skills` 内の `<ul class="badge-list ...">` に `<li>` を追加 |
-| プロジェクト追加 | `index.html` の `#projects` 内の `<article class="project-card">` をコピーして追記 |
-| X (Twitter) URL | `index.html` の Contact セクションの X リンクの `href="#"` を実際の URL に変更 |
 | 経歴追加 | `index.html` の `#experience` 内の `<ol class="timeline">` に `<li class="timeline-item">` を追加 |
-| アクセントカラー変更 | `style.css` の `:root` と `[data-theme="light"]` の `--accent` `--accent-2` `--accent-3` を変更 |
+| ライブ追加 | `index.html` の `#live-grid` 内に `<article class="live-card card {アーティストクラス}">` を追加 |
+| アクセントカラー変更 | `style.css` の `:root` の `--accent` `--accent-2` `--accent-3` を変更 |
+| 英語翻訳 | `script.js` の `i18n.en` オブジェクトを編集 |
+
+### アーティストクラス一覧
+
+| アーティスト | クラス名 | 色 |
+|---|---|---|
+| go!go!vanillas | `vanillas` | 青 |
+| クリープハイプ | `creep` | ピンク |
+| 乃木坂46 | `nogizaka` | 紫 |
+| Official髭男dism | `higedan` | 緑 |
+| オレンジスパイニクラブ | `orange` | オレンジ |
+| その他 | `other` | グレー |
+
+---
 
 ## ファイル構成
 
 ```
 waka-koyama.github.io/
-├── index.html   # マークアップ・コンテンツ
-├── style.css    # スタイル・カラー・レイアウト
-├── script.js    # テーマ切替・言語切替・スクロールアニメーション
+├── index.html   # マークアップ・コンテンツ・ライブデータ
+├── style.css    # スタイル・カラー・レイアウト・アーティスト色分け
+├── script.js    # テーマ切替・言語切替・フェードイン・ライブフィルター
 └── README.md    # このファイル
 ```
 
