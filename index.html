@@ -14,11 +14,11 @@
   <a class="logo" href="#hero" aria-label="トップへ">WK</a>
   <nav class="nav" aria-label="メインナビゲーション">
     <ul>
-      <li><a href="#about"    data-i18n="nav.about">About</a></li>
-      <li><a href="#skills"   data-i18n="nav.skills">Skills</a></li>
-      <li><a href="#projects" data-i18n="nav.projects">Lives</a></li>
+      <li><a href="#about"      data-i18n="nav.about">About</a></li>
+      <li><a href="#skills"     data-i18n="nav.skills">Skills</a></li>
+      <li><a href="#projects"   data-i18n="nav.projects">Lives</a></li>
       <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
-      <li><a href="#contact"  data-i18n="nav.contact">Contact</a></li>
+      <li><a href="#contact"    data-i18n="nav.contact">Contact</a></li>
     </ul>
   </nav>
   <div class="header-controls">
@@ -34,34 +34,23 @@
   <div class="blob blob-1" aria-hidden="true"></div>
   <div class="blob blob-2" aria-hidden="true"></div>
   <div class="blob blob-3" aria-hidden="true"></div>
-
   <div class="hero-inner">
     <div class="hero-photo-wrap">
-      <img
-        class="hero-photo"
-        src="YOUR_PHOTO.jpg"
-        alt="小山和香のプロフィール写真"
-        width="220" height="220"
-        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
-      >
+      <img class="hero-photo" src="YOUR_PHOTO.jpg" alt="小山和香のプロフィール写真" width="220" height="220"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
       <div class="hero-photo-placeholder" aria-hidden="true">📷</div>
     </div>
-
     <div class="hero-text">
       <p class="hero-tags" aria-label="タグ">
         <span class="tag tag-music">#音楽</span>
         <span class="tag tag-live">#ライブ</span>
         <span class="tag tag-travel">#旅行</span>
       </p>
-      <h1 class="hero-name">
-        <span data-i18n="hero.name">小山 和香</span>
-      </h1>
-      <p class="hero-headline" data-i18n="hero.headline">
-        音楽と旅が好きな大学生
-      </p>
+      <h1 class="hero-name"><span data-i18n="hero.name">小山 和香</span></h1>
+      <p class="hero-headline" data-i18n="hero.headline">音楽と旅が好きな大学生</p>
       <div class="hero-cta">
         <a href="#projects" class="btn btn-primary" data-i18n="hero.cta1">ライブ記録を見る</a>
-        <a href="#contact"  class="btn btn-outline" data-i18n="hero.cta2">連絡する</a>
+        <a href="#contact"  class="btn btn-outline"  data-i18n="hero.cta2">連絡する</a>
       </div>
     </div>
   </div>
@@ -72,12 +61,10 @@
   <div class="container">
     <h2 class="section-title" id="about-heading" data-i18n="about.title">About</h2>
     <div class="about-card card">
-      <p data-i18n="about.body1">
-        名古屋市立大学 経済学部 会計ファイナンス学科3年。趣味は音楽を聴くこと、旅行に行くことです。大学生のうちに47都道府県を制覇することが目標です。
-      </p>
+      <p data-i18n="about.body1">名古屋市立大学 経済学部 会計ファイナンス学科3年。趣味は音楽を聴くこと、旅行に行くことです。大学生のうちに47都道府県を制覇することが目標です。</p>
       <div class="about-stats">
         <div class="stat-item">
-          <span class="stat-num" id="live-count">24</span>
+          <span class="stat-num" id="live-count">25</span>
           <span class="stat-label" data-i18n="about.stat1">ライブ参戦</span>
         </div>
         <div class="stat-item">
@@ -98,30 +85,23 @@
   <div class="container">
     <h2 class="section-title" id="skills-heading" data-i18n="skills.title">Skills</h2>
     <p class="section-note" data-i18n="skills.note">※ プレースホルダーです。実際のスキルに書き換えてください。</p>
-
     <div class="skills-grid">
       <div class="skill-group card">
         <h3 class="skill-group-title" data-i18n="skills.cat1">よく使う</h3>
         <ul class="badge-list badge-primary">
-          <li>YOUR_SKILL_1</li>
-          <li>YOUR_SKILL_2</li>
-          <li>YOUR_SKILL_3</li>
+          <li>YOUR_SKILL_1</li><li>YOUR_SKILL_2</li><li>YOUR_SKILL_3</li>
         </ul>
       </div>
       <div class="skill-group card">
         <h3 class="skill-group-title" data-i18n="skills.cat2">触ったことある</h3>
         <ul class="badge-list badge-secondary">
-          <li>YOUR_SKILL_4</li>
-          <li>YOUR_SKILL_5</li>
+          <li>YOUR_SKILL_4</li><li>YOUR_SKILL_5</li>
         </ul>
       </div>
       <div class="skill-group card">
         <h3 class="skill-group-title" data-i18n="skills.cat3">好き</h3>
         <ul class="badge-list badge-accent">
-          <li>音楽鑑賞</li>
-          <li>ライブ遠征</li>
-          <li>旅行</li>
-          <li>経済・会計</li>
+          <li>音楽鑑賞</li><li>ライブ遠征</li><li>旅行</li><li>経済・会計</li>
         </ul>
       </div>
     </div>
@@ -134,18 +114,18 @@
     <h2 class="section-title" id="projects-heading" data-i18n="projects.title">ライブ記録</h2>
     <p class="section-sub" data-i18n="projects.sub">参戦したライブの記録です。</p>
 
-    <!-- フィルター -->
     <div class="filter-bar" role="group" aria-label="アーティストフィルター">
-      <button class="filter-btn active" data-filter="all" data-i18n="filter.all">すべて</button>
-      <button class="filter-btn" data-filter="vanillas">go!go!vanillas</button>
-      <button class="filter-btn" data-filter="creep">クリープハイプ</button>
-      <button class="filter-btn" data-filter="nogizaka">乃木坂46</button>
-      <button class="filter-btn" data-filter="higedan">Official髭男dism</button>
-      <button class="filter-btn" data-filter="orange">オレンジスパイニクラブ</button>
-      <button class="filter-btn" data-filter="other" data-i18n="filter.other">その他</button>
+      <button class="filter-btn active" data-filter="all"      data-i18n="filter.all">すべて</button>
+      <button class="filter-btn"        data-filter="vanillas">go!go!vanillas</button>
+      <button class="filter-btn"        data-filter="creep">クリープハイプ</button>
+      <button class="filter-btn"        data-filter="nogizaka">乃木坂46</button>
+      <button class="filter-btn"        data-filter="higedan">Official髭男dism</button>
+      <button class="filter-btn"        data-filter="orange">オレンジスパイニクラブ</button>
+      <button class="filter-btn"        data-filter="other"    data-i18n="filter.other">その他</button>
     </div>
 
     <div class="live-grid" id="live-grid">
+
 
       <!-- 2021 -->
       <div class="year-label">2021</div>
@@ -211,8 +191,8 @@
       <div class="year-label">2023</div>
 
       <article class="live-card card creep" data-artist="creep"
-        data-tour="YOUR_TOUR_NAME"
-        data-setlist="曲名1,曲名2,曲名3">
+        data-tour="本なんてぶっ飛ばしてよ"
+        data-setlist="身も蓋もない水槽,しょうもな,一生に一度愛してるよ,君の部屋,月の逆襲,グレーマンのせいにする,キケンナアソビ,ボーイズENDガールズ,明日はどっちだ,傷つける,ナイトオンザプラネット,一生のお願い,本なんてぶっ飛ばしてよ,チロルとポルノ,愛の標識,栞,イト,火まつり,週刊誌,社会の窓と同じ構成,HE IS MINE,ポリコ,おやすみ泣き声、さよなら歌姫,イノチミジカシコイセヨオトメ,二十九、三十">
         <time class="live-date" datetime="2023-03-26">2023.03.26</time>
         <h3 class="live-artist">クリープハイプ</h3>
         <p class="live-venue">大阪城ホール</p>
@@ -220,8 +200,8 @@
       </article>
 
       <article class="live-card card vanillas" data-artist="vanillas"
-        data-tour="YOUR_TOUR_NAME"
-        data-setlist="曲名1,曲名2,曲名3">
+        data-tour="FLOWERS"
+        data-setlist="RUN RUN RUN,HIGHER,The Marking Song,I Don't Wanna Be You,おはようカルチャー,Penetration,ペンペン,お子さまプレート,青いの。,鏡,アダムとイヴ,My Favorite Things,Dirty Pretty Things,バイリンガール,エマ,カウンターアクション,one shot kill,アメイジングレース,きみとぼく,硝子,LIFE IS BEAUTIFUL">
         <time class="live-date" datetime="2023-04-20">2023.04.20</time>
         <h3 class="live-artist">go!go!vanillas</h3>
         <p class="live-venue">オリックス劇場</p>
@@ -229,53 +209,61 @@
       </article>
 
       <article class="live-card card vanillas" data-artist="vanillas"
-        data-tour="YOUR_TOUR_NAME"
-        data-setlist="曲名1,曲名2,曲名3">
+        data-tour="go!go!CLUB 会員限定ライブ「TIME THIEF TOUR」"
+        data-setlist="ハイテンション,We are go!,非実在少女,ラバーズ,ホラーショー,ビッグモンスーン,バイリンガール,トワイライト,ニューエイジ,なつのうた,ツインズ,No No No,モールスクライスト,セレモニー,ニューゲーム,カウンターアクション,ライクアマウンテン,エマ,おはようカルチャー,人間讃歌,アクロス ザ ユニバーシティ,ギフト">
         <time class="live-date" datetime="2023-06-21">2023.06.21</time>
         <h3 class="live-artist">go!go!vanillas</h3>
         <p class="live-venue">なんばHatch</p>
         <span class="live-tag">#ライブ</span>
       </article>
 
+
       <!-- 2024 -->
       <div class="year-label">2024</div>
 
-      <article class="live-card card vanillas" data-artist="vanillas">
+      <article class="live-card card vanillas" data-artist="vanillas"
+        data-tour='w.o.d. presents "スペース・インベーダーズ VI"'
+        data-setlist="【go!go!vanillas】HIGHER,エマ,デッドマンズチェイス,SHAKE,鏡,平安,one shot kill,ストレンジャー,カウンターアクション,平成ペイン,マジック / 【w.o.d】STARS,楽園,Fullface,Kill your idols Kiss me baby,lala,1994,陽炎,バニラ・スカイ,オレンジ,あらしのよるに,エンドレス・リピート,イカロス,Mayday,踊る阿呆に見る阿呆,My Generation">
         <time class="live-date" datetime="2024-06-29">2024.06.29</time>
         <h3 class="live-artist">w.o.d × go!go!vanillas</h3>
         <p class="live-venue">ダイヤモンドホール</p>
         <span class="live-tag">#対バン</span>
       </article>
 
-      <article class="live-card card nogizaka" data-artist="nogizaka">
+      <article class="live-card card nogizaka" data-artist="nogizaka"
+        data-tour="YOUR_TOUR_NAME" data-setlist="">
         <time class="live-date" datetime="2024-07-20">2024.07.20</time>
         <h3 class="live-artist">乃木坂46</h3>
         <p class="live-venue">京セラドーム</p>
         <span class="live-tag">#ライブ</span>
       </article>
 
-      <article class="live-card card nogizaka" data-artist="nogizaka">
+      <article class="live-card card nogizaka" data-artist="nogizaka"
+        data-tour="YOUR_TOUR_NAME" data-setlist="">
         <time class="live-date" datetime="2024-07-21">2024.07.21</time>
         <h3 class="live-artist">乃木坂46</h3>
         <p class="live-venue">京セラドーム</p>
         <span class="live-tag">#ライブ</span>
       </article>
 
-      <article class="live-card card nogizaka" data-artist="nogizaka">
+      <article class="live-card card nogizaka" data-artist="nogizaka"
+        data-tour="YOUR_TOUR_NAME" data-setlist="">
         <time class="live-date" datetime="2024-08-24">2024.08.24</time>
         <h3 class="live-artist">乃木坂46</h3>
         <p class="live-venue">バンテリンドーム</p>
         <span class="live-tag">#ライブ</span>
       </article>
 
-      <article class="live-card card other" data-artist="other">
+      <article class="live-card card other" data-artist="other"
+        data-tour="" data-setlist="">
         <time class="live-date" datetime="2024-10-09">2024.10.09</time>
         <h3 class="live-artist">プッシュプルポット × arakezuri</h3>
         <p class="live-venue">市大祭</p>
         <span class="live-tag">#学祭</span>
       </article>
 
-      <article class="live-card card creep" data-artist="creep">
+      <article class="live-card card creep" data-artist="creep"
+        data-tour="YOUR_TOUR_NAME" data-setlist="">
         <time class="live-date" datetime="2024-11-16">2024.11.16</time>
         <h3 class="live-artist">クリープハイプ</h3>
         <p class="live-venue">Kアリーナ横浜</p>
@@ -285,49 +273,56 @@
       <!-- 2025 -->
       <div class="year-label">2025</div>
 
-      <article class="live-card card vanillas" data-artist="vanillas">
+      <article class="live-card card vanillas" data-artist="vanillas"
+        data-tour="YOUR_TOUR_NAME" data-setlist="">
         <time class="live-date" datetime="2025-02-07">2025.02.07</time>
         <h3 class="live-artist">go!go!vanillas</h3>
         <p class="live-venue">Zepp名古屋</p>
         <span class="live-tag">#ライブ</span>
       </article>
 
-      <article class="live-card card vanillas" data-artist="vanillas">
+      <article class="live-card card vanillas" data-artist="vanillas"
+        data-tour="YOUR_TOUR_NAME" data-setlist="">
         <time class="live-date" datetime="2025-03-08">2025.03.08</time>
         <h3 class="live-artist">go!go!vanillas</h3>
         <p class="live-venue">日本武道館</p>
         <span class="live-tag">#武道館</span>
       </article>
 
-      <article class="live-card card vanillas" data-artist="vanillas">
+      <article class="live-card card vanillas" data-artist="vanillas"
+        data-tour="YOUR_TOUR_NAME" data-setlist="">
         <time class="live-date" datetime="2025-03-09">2025.03.09</time>
         <h3 class="live-artist">go!go!vanillas</h3>
         <p class="live-venue">日本武道館</p>
         <span class="live-tag">#武道館</span>
       </article>
 
-      <article class="live-card card vanillas" data-artist="vanillas">
+      <article class="live-card card vanillas" data-artist="vanillas"
+        data-tour="YOUR_TOUR_NAME" data-setlist="">
         <time class="live-date" datetime="2025-04-20">2025.04.20</time>
         <h3 class="live-artist">go!go!vanillas</h3>
         <p class="live-venue">大阪城ホール</p>
         <span class="live-tag">#ライブ</span>
       </article>
 
-      <article class="live-card card vanillas" data-artist="vanillas">
+      <article class="live-card card vanillas" data-artist="vanillas"
+        data-tour="YOUR_TOUR_NAME" data-setlist="">
         <time class="live-date" datetime="2025-05-27">2025.05.27</time>
         <h3 class="live-artist">go!go!vanillas</h3>
         <p class="live-venue">Zepp名古屋</p>
         <span class="live-tag">#ライブ</span>
       </article>
 
-      <article class="live-card card vanillas" data-artist="vanillas">
+      <article class="live-card card vanillas" data-artist="vanillas"
+        data-tour="YOUR_TOUR_NAME" data-setlist="">
         <time class="live-date" datetime="2025-10-31">2025.10.31</time>
         <h3 class="live-artist">go!go!vanillas</h3>
         <p class="live-venue">日本特殊陶業市民会館</p>
         <span class="live-tag">#ライブ</span>
       </article>
 
-      <article class="live-card card other" data-artist="other">
+      <article class="live-card card other" data-artist="other"
+        data-tour="" data-setlist="">
         <time class="live-date" datetime="2025-12-14">2025.12.14</time>
         <h3 class="live-artist">RADWIMPS</h3>
         <p class="live-venue">ポートメッセなごや</p>
@@ -337,21 +332,24 @@
       <!-- 2026 -->
       <div class="year-label">2026</div>
 
-      <article class="live-card card vanillas" data-artist="vanillas">
+      <article class="live-card card vanillas" data-artist="vanillas"
+        data-tour="YOUR_TOUR_NAME" data-setlist="">
         <time class="live-date" datetime="2026-03-22">2026.03.22</time>
         <h3 class="live-artist">go!go!vanillas</h3>
         <p class="live-venue">GLION ARENA KOBE</p>
         <span class="live-tag">#ライブ</span>
       </article>
 
-      <article class="live-card card vanillas" data-artist="vanillas">
+      <article class="live-card card vanillas" data-artist="vanillas"
+        data-tour="YOUR_TOUR_NAME" data-setlist="">
         <time class="live-date" datetime="2026-04-29">2026.04.29</time>
         <h3 class="live-artist">go!go!vanillas</h3>
         <p class="live-venue">日本ガイシホール</p>
         <span class="live-tag">#ライブ</span>
       </article>
 
-      <article class="live-card card vanillas" data-artist="vanillas">
+      <article class="live-card card vanillas" data-artist="vanillas"
+        data-tour="YOUR_TOUR_NAME" data-setlist="">
         <time class="live-date" datetime="2026-05-05">2026.05.05</time>
         <h3 class="live-artist">go!go!vanillas × マカロニえんぴつ</h3>
         <p class="live-venue">Zepp DiverCity TOKYO</p>
@@ -361,6 +359,7 @@
     </div><!-- /live-grid -->
   </div>
 </section>
+
 
 <!-- ========== EXPERIENCE ========== -->
 <section id="experience" class="section fade-in" aria-labelledby="exp-heading">
@@ -416,10 +415,10 @@
 <div id="live-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-artist" hidden>
   <div class="modal-box card">
     <button class="modal-close" id="modal-close" aria-label="閉じる">✕</button>
-    <p class="modal-date" id="modal-date"></p>
+    <p class="modal-date"   id="modal-date"></p>
     <h2 class="modal-artist" id="modal-artist"></h2>
-    <p class="modal-venue" id="modal-venue"></p>
-    <p class="modal-tour" id="modal-tour"></p>
+    <p class="modal-venue"  id="modal-venue"></p>
+    <p class="modal-tour"   id="modal-tour"></p>
     <div class="modal-setlist-wrap">
       <h3 class="modal-setlist-title">セットリスト</h3>
       <ol class="modal-setlist" id="modal-setlist"></ol>
