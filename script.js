@@ -41,9 +41,9 @@ const i18n = {
     'hero.cta1':      'ライブ記録を見る',
     'hero.cta2':      '連絡する',
     'about.title':    'About',
-    'about.body1':    '名古屋市立大学 経済学部 会計ファイナンス学科の3年生です。数字と向き合う日々を送りながら、週末はライブハウスかどこかの街にいることが多いです。',
-    'about.body2':    '音楽はずっと好きで、特にgo!go!vanillasとクリープハイプはもう何度行ったか数えられないくらい。ライブって、同じ曲でも毎回ぜんぜん違うから飽きないんですよね。',
-    'about.body3':    '旅行も大好きで、大学生のうちに47都道府県を全部まわるのが目標です。まだまだ行けてない県があるので、ちょっとずつ制覇していきます。',
+    'about.body1':    '名古屋市立大学 経済学部 会計ファイナンス学科3年。趣味は音楽を聴くこと、旅行に行くことです。大学生のうちに47都道府県を制覇することが目標です。',
+    'about.body2':    '',
+    'about.body3':    '',
     'about.stat1':    'ライブ参戦',
     'about.stat2':    '都道府県制覇が目標',
     'about.stat3':    'ライブ歴',
@@ -75,9 +75,9 @@ const i18n = {
     'hero.cta1':      'See Live Log',
     'hero.cta2':      'Contact',
     'about.title':    'About',
-    'about.body1':    "I'm a 3rd-year student majoring in Accounting & Finance at Nagoya City University. On weekdays I crunch numbers; on weekends I'm usually at a live venue or exploring a new city.",
-    'about.body2':    "I've been to more go!go!vanillas and Creep Hyp shows than I can count. Every live feels different even with the same setlist — that's what keeps me coming back.",
-    'about.body3':    "I also love travelling and my goal is to visit all 47 prefectures before I graduate. Still plenty left to tick off!",
+    'about.body1':    "3rd-year student majoring in Accounting & Finance at Nagoya City University. I love listening to music and travelling. My goal is to visit all 47 prefectures before I graduate.",
+    'about.body2':    '',
+    'about.body3':    '',
     'about.stat1':    'Lives attended',
     'about.stat2':    'Prefectures — my goal',
     'about.stat3':    'Live history since',
@@ -167,3 +167,61 @@ filterBtns.forEach(btn => {
     });
   });
 });
+
+
+/* ============================================================
+   5. Live card modal
+   ============================================================ */
+const modal        = document.getElementById('live-modal');
+const modalClose   = document.getElementById('modal-close');
+const modalDate    = document.getElementById('modal-date');
+const modalArtist  = document.getElementById('modal-artist');
+const modalVenue   = document.getElementById('modal-venue');
+const modalTour    = document.getElementById('modal-tour');
+const modalSetlist = document.getElementById('modal-setlist');
+
+function openModal(card) {
+  const date    = card.querySelector('time').textContent;
+  const artist  = card.querySelector('.live-artist').textContent;
+  const venue   = card.querySelector('.live-venue').textContent;
+  const tour    = card.dataset.tour || '';
+  const setlist = card.dataset.setlist || '';
+
+  modalDate.textContent   = date;
+  modalArtist.textContent = artist;
+  modalVenue.textContent  = venue;
+  modalTour.textContent   = tour ? `🎫 ${tour}` : '';
+  modalTour.style.display = tour ? '' : 'none';
+
+  modalSetlist.innerHTML = setlist
+    ? setlist.split(',').map(s => `<li>${s.trim()}</li>`).join('')
+    : '<li style="color:var(--text-muted)">セットリスト未登録</li>';
+
+  // アーティストカラーをモーダルに反映
+  const colorMap = {
+    vanillas: '#5b8dee', creep: '#f06292', nogizaka: '#ab47bc',
+    higedan: '#43a047', orange: '#fb8c00', other: '#78909c',
+  };
+  const artist_class = [...card.classList].find(c => colorMap[c]);
+  modalArtist.style.color = colorMap[artist_class] || 'var(--text)';
+
+  modal.removeAttribute('hidden');
+  document.body.style.overflow = 'hidden';
+  modalClose.focus();
+}
+
+function closeModal() {
+  modal.setAttribute('hidden', '');
+  document.body.style.overflow = '';
+}
+
+document.querySelectorAll('.live-card').forEach(card => {
+  card.addEventListener('click', () => openModal(card));
+  card.setAttribute('role', 'button');
+  card.setAttribute('tabindex', '0');
+  card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') openModal(card); });
+});
+
+modalClose.addEventListener('click', closeModal);
+modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
