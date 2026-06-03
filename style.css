@@ -4,30 +4,30 @@
 
 /* ---------- CSS Variables ---------- */
 :root {
-  --accent:   #5b8dee;
-  --accent-2: #f06292;
-  --accent-3: #ab47bc;
+  --accent:   #4fc3f7;
+  --accent-2: #7c4dff;
+  --accent-3: #00e5ff;
   --grad: linear-gradient(135deg, var(--accent), var(--accent-2), var(--accent-3));
 
   /* dark (default) */
-  --bg:        #080d1a;
-  --bg-card:   #0f1b30;
-  --bg-card2:  #162540;
-  --text:      #e8e8f0;
-  --text-muted:#9090b0;
-  --border:    rgba(255,255,255,.08);
-  --shadow:    0 4px 24px rgba(0,0,0,.45);
+  --bg:        #050a14;
+  --bg-card:   rgba(255,255,255,.04);
+  --bg-card2:  rgba(255,255,255,.07);
+  --text:      #e2eaf8;
+  --text-muted:#7a90b8;
+  --border:    rgba(79,195,247,.12);
+  --shadow:    0 4px 32px rgba(0,0,0,.6);
   --radius:    14px;
   --header-h:  60px;
 }
 
 [data-theme="light"] {
-  --bg:        #e8eef8;
-  --bg-card:   #f0f5ff;
-  --bg-card2:  #dde6f5;
-  --text:      #1a1a2e;
-  --text-muted:#6060a0;
-  --border:    rgba(0,0,0,.08);
+  --bg:        #eaf1fb;
+  --bg-card:   rgba(255,255,255,.8);
+  --bg-card2:  rgba(220,235,255,.7);
+  --text:      #0d1b2e;
+  --text-muted:#4a6080;
+  --border:    rgba(79,195,247,.2);
   --shadow:    0 4px 24px rgba(0,0,0,.10);
 }
 
@@ -38,6 +38,9 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP",
                "Yu Gothic", sans-serif;
   background: var(--bg);
+  background-image: radial-gradient(ellipse at 20% 20%, rgba(79,195,247,.08) 0%, transparent 60%),
+                    radial-gradient(ellipse at 80% 80%, rgba(124,77,255,.08) 0%, transparent 60%);
+  background-attachment: fixed;
   color: var(--text);
   line-height: 1.7;
   transition: background .3s, color .3s;
