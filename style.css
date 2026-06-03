@@ -10,9 +10,9 @@
   --grad: linear-gradient(135deg, var(--accent), var(--accent-2), var(--accent-3));
 
   /* dark (default) */
-  --bg:        #0f0f14;
-  --bg-card:   #1a1a24;
-  --bg-card2:  #22223a;
+  --bg:        #080d1a;
+  --bg-card:   #0f1b30;
+  --bg-card2:  #162540;
   --text:      #e8e8f0;
   --text-muted:#9090b0;
   --border:    rgba(255,255,255,.08);
@@ -22,9 +22,9 @@
 }
 
 [data-theme="light"] {
-  --bg:        #f5f5fb;
-  --bg-card:   #ffffff;
-  --bg-card2:  #eeeef8;
+  --bg:        #e8eef8;
+  --bg-card:   #f0f5ff;
+  --bg-card2:  #dde6f5;
   --text:      #1a1a2e;
   --text-muted:#6060a0;
   --border:    rgba(0,0,0,.08);
